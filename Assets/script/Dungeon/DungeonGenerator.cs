@@ -208,7 +208,6 @@ public class DungeonGenerators : MonoBehaviour
 	    foreach (DebugLine line in _debugLines)
 	    {
 		    Gizmos.DrawLine(line.start, line.end);
-		    
 		    Gizmos.DrawSphere(line.start, 0.5f);
 	    }
 	    
