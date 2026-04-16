@@ -6,8 +6,6 @@ public class GeminiBSP_Editor : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
-        
         BSPGenerator generator = (BSPGenerator)target;
         
         DrawDefaultInspector();

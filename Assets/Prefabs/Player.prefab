@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8457693242705065447}
   - component: {fileID: 978446393740355687}
   - component: {fileID: 3020491797788552862}
-  m_Layer: 0
+  - component: {fileID: 2846973813414603461}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2408242894038927498}
@@ -73,10 +74,10 @@ BoxCollider2D:
   m_Offset: {x: 0.006875694, y: 0.017189369}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.54, y: 0.73}
+    newSize: {x: 0.54, y: 0.75}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -94,7 +95,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -107,8 +108,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &978446393740355687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +240,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2876bb7194cb1458ed5fbde854d885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharachterController
-  moveSpeed: 5
+  moveSpeed: 15
+  _sr: {fileID: 4266557076467490311}
+  _animator: {fileID: 3725577830726598504}
+--- !u!114 &2846973813414603461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843236899298960228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8901572e4dd74a5a8067afa85ecae208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wapons_Manager
+  _animator: {fileID: 3725577830726598504}
+  Wapons: 0
 --- !u!1 &4795263571639733801
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +268,7 @@ GameObject:
   - component: {fileID: 2408242894038927498}
   - component: {fileID: 4266557076467490311}
   - component: {fileID: 3725577830726598504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn_Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +337,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5948806968594788206, guid: caf42a84f942f0a47b0fee443862b759, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

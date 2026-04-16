@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8868479431631427542}
   - component: {fileID: 8465621817178622349}
+  - component: {fileID: 4436157358529885537}
+  - component: {fileID: 3917772280553373152}
   - component: {fileID: 5901019882933129069}
   - component: {fileID: 3387706262670728977}
   - component: {fileID: 5457736787158591737}
-  m_Layer: 0
+  - component: {fileID: 8882035627515160044}
+  m_Layer: 7
   m_Name: EnneyArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,68 +51,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd97d135e8314ea4cb2f603f4ef21c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Archer
-  _animationCurve:
+  _detector: {fileID: 4436157358529885537}
+  _detector2: {fileID: 3917772280553373152}
+  _munition: {fileID: 5992182538723607624, guid: 3acae0f711d9912488d23b9f472d8fa6, type: 3}
+  _shootingSpeed: 3
+--- !u!114 &4436157358529885537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393507824652558025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e509ba5f64904292049c6872e426b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Detector
+  mask:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 9240.651
-      tangentMode: 1
-      weightedMode: 3
-      inWeight: 0.33333334
-      outWeight: 0.0011384921
-    - serializedVersion: 3
-      time: 0.15136576
-      value: -0.14770992
-      inSlope: 20.076935
-      outSlope: 20.076935
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.11585939
-    - serializedVersion: 3
-      time: 0.39180613
-      value: 0.3853813
-      inSlope: 7.6861525
-      outSlope: 7.6861525
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.07189542
-    - serializedVersion: 3
-      time: 0.5744357
-      value: 1.2056257
-      inSlope: -14.737662
-      outSlope: -14.737662
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.045098983
-    - serializedVersion: 3
-      time: 0.86032814
-      value: 0.59805286
-      inSlope: -7.9531336
-      outSlope: -7.9531336
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.19340417
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  _input: 0
-  _score: 0
+    m_Bits: 64
+  rayon: 3
+  detect: 0
+--- !u!114 &3917772280553373152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393507824652558025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e509ba5f64904292049c6872e426b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Detector
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  rayon: 7
+  detect: 0
 --- !u!50 &5901019882933129069
 Rigidbody2D:
   serializedVersion: 5
@@ -197,6 +176,52 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40829468, y: 0.6850643}
   m_EdgeRadius: 0
+--- !u!61 &8882035627515160044
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393507824652558025}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.038173676, y: -0.062033176}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.40829468, y: 0.6850643}
+  m_EdgeRadius: 0
 --- !u!1 &6235083001439114299
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +233,7 @@ GameObject:
   - component: {fileID: 1689917301995880074}
   - component: {fileID: 5196551441569129012}
   - component: {fileID: 7127501645540834882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Archer_Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

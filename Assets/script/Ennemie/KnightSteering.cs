@@ -17,6 +17,7 @@ public class KnightSteering : MonoBehaviour
         _player = GameObject.Find("Player");
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0;
+        _rb.freezeRotation = true;
     }
 
     private void Update()

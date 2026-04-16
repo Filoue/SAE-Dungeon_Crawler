@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomTrigger : MonoBehaviour
 {
     public GameObject[] mobPrefabs;
     public int spawnAmount = 10;
     
+    
+    
     private bool hasSpawned = false;
+    private bool RoomFinish = false;
     private RectInt roomData;
 
     public void Setup(RectInt data)
@@ -36,5 +41,17 @@ public class RoomTrigger : MonoBehaviour
         }
         
         Debug.Log("Player entered room: Mobs spawned!");
+    }
+
+    private void Update()
+    {
+        if (transform.childCount <= 0 && hasSpawned)
+        {
+            if (!RoomFinish)
+            {
+            }
+            RoomFinish = true;
+            Debug.Log("room finish");
+        }
     }
 }

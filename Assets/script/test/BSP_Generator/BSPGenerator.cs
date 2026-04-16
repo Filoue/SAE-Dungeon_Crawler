@@ -239,19 +239,33 @@ public class BSPGenerator : MonoBehaviour
     {
         foreach (RectInt room in rooms)
         {
-            if (room != _startRoom && room != _bossRoom)
+            if (room != _startRoom)
             {
-                GameObject triggerObj = new GameObject("RoomTrigger_" + room.center);
-                triggerObj.transform.position = new  Vector3(room.center.x, room.center.y, 0);
-                
-                BoxCollider2D collider = triggerObj.AddComponent<BoxCollider2D>();
-                collider.isTrigger = true;
-                
-                collider.size = new Vector2(room.width - 0.5f, room.height - 0.5f);
-                
-                RoomTrigger rt = triggerObj.AddComponent<RoomTrigger>();
-                rt.mobPrefabs = enemyPrefabs;
-                rt.Setup(room);    
+                if(room != _bossRoom)
+                {
+                    GameObject triggerObj = new GameObject("RoomTrigger_" + room.center);
+                    triggerObj.transform.position = new Vector3(room.center.x, room.center.y, 0);
+
+                    BoxCollider2D collider = triggerObj.AddComponent<BoxCollider2D>();
+                    collider.isTrigger = true;
+
+                    collider.size = new Vector2(room.width - 0.5f, room.height - 0.5f);
+
+                    RoomTrigger rt = triggerObj.AddComponent<RoomTrigger>();
+
+                    rt.mobPrefabs = enemyPrefabs;
+                    rt.Setup(room);
+                }
+                else
+                {
+                    GameObject triggerObj = new GameObject("BossTriggerRoom_" + room.center);
+                    triggerObj.transform.position = new Vector3(room.center.x, room.center.y, 0);
+
+                    BoxCollider2D collider = triggerObj.AddComponent<BoxCollider2D>();
+                    collider.isTrigger = true;
+
+                    collider.size = new Vector2(room.width - 0.5f, room.height - 0.5f);
+                }
             }
         }
     }

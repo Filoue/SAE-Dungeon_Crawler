@@ -31,31 +31,39 @@ public static class AStarProcess
     {
         List<Vector3Int> path = new List<Vector3Int>();
 
+        List<Vector3Int> aiWalkables = walkables.Where(w => GetWalkableNeighbours(walkables, w) >= 8).ToList();
+
         if (walkables.Contains(start) && walkables.Contains(end))
         {
             // Basics stuff -------------
-            path.Add(start);
-            path.Add(end);
+            // path.Add(start);
+            // path.Add(end);
 
-            Queue<AStarPoint> _pointQueue = new Queue<AStarPoint>();
+            List<AStarPoint> openPoints = new List<AStarPoint>();
             
-            _pointQueue.Enqueue(new AStarPoint(start, 0, Vector3Int.Distance(start, end), null));
+            openPoints.Add(new AStarPoint(start, 0, Vector3Int.Distance(start, end), null));
 
             List<Vector3Int> closePoint = new List<Vector3Int>();
             
             do
             {
                 // BFS pathing
-                AStarPoint currentPoint = _pointQueue.Dequeue();
+                AStarPoint currentPoint = openPoints.OrderBy(p => p.F).First();
+                openPoints.Remove(currentPoint);
                 
                 // We found the end
-                if(currentPoint.Pos == end) break;
+                if (currentPoint.Pos == end)
+                {
+                    Debug.Log("J'ai trouver je vous jure il existe");
+
+                    GetPath(currentPoint, path);
+                    return /* j'en sais trop rien */ null;
+                }
                 
-                // Check for points already checked
-                closePoint.Add(currentPoint.Pos);
+
                 
                 // Check neighbours
-                foreach (var neighbour in Utils.MooreDirections)
+                foreach (var neighbour in Utils.MooreDirections.OrderBy(_ => Random.value))
                 {
                     Vector3Int pos = currentPoint.Pos + neighbour;
                     
@@ -66,13 +74,46 @@ public static class AStarProcess
                     {
                         float newG = currentPoint.G + Vector3Int.Distance(pos, currentPoint.Pos);
                         float newH = Vector3Int.Distance(pos, end);
+
+                        var existingPoint = openPoints.FirstOrDefault(p => p.Pos == pos);
                         
-                        _pointQueue.Enqueue(new AStarPoint(pos, newG, newH, currentPoint));
+                        if (existingPoint == null)
+                        {
+                            openPoints.Add(new AStarPoint(pos, newG, newH, currentPoint));
+                        }
+                        else if(existingPoint.F > newH + newG)
+                        {
+                            existingPoint.G = newG;
+                            existingPoint.H = newH;
+
+                            existingPoint.Parent = currentPoint;
+                        }
+                        
+                        // Check for points already checked
+                        closePoint.Add(pos);
                     }
                 }
-            } while (_pointQueue.Count > 0);
+            } while (openPoints.Count > 0 && closePoint.Count > walkables.Count);
         }
         
         return path.ToArray();
+    }
+
+    private static void GetPath(AStarPoint pathPoint, List<Vector3Int> path)
+    {
+        path.Add(pathPoint.Pos);
+        
+        if (pathPoint.Parent != null) GetPath(pathPoint.Parent, path);
+    }
+
+    private static int GetWalkableNeighbours(List<Vector3Int> walkable, Vector3Int position)
+    {
+        int neigbourCount = 0;
+        foreach (var neighbour in Utils.MooreDirections);
+        {
+            //if (walkable.Contains(position + neighbour)) neigbourCount++;
+        }
+
+        return 0;
     }
 }

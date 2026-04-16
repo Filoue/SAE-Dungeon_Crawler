@@ -134,12 +134,12 @@ TextureImporter:
       name: Pawn_Run Knife_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 56
-        width: 66
-        height: 77
+        x: 73
+        y: 57
+        width: 64
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: Pawn_Run Knife_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 56
-        width: 60
-        height: 79
+        x: 257
+        y: 57
+        width: 77
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,37 +175,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pawn_Run Knife_2
-      rect:
-        serializedVersion: 2
-        x: 314
-        y: 75
-        width: 21
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8afb60ce9bdc8dae0800000000000000
-      internalID: -1524242275452403800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Pawn_Run Knife_3
       rect:
         serializedVersion: 2
-        x: 450
-        y: 56
-        width: 73
-        height: 74
+        x: 451
+        y: 57
+        width: 71
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,12 +200,12 @@ TextureImporter:
       name: Pawn_Run Knife_4
       rect:
         serializedVersion: 2
-        x: 646
-        y: 56
-        width: 63
-        height: 76
+        x: 647
+        y: 57
+        width: 61
+        height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +222,12 @@ TextureImporter:
       name: Pawn_Run Knife_5
       rect:
         serializedVersion: 2
-        x: 835
-        y: 56
-        width: 63
-        height: 79
+        x: 836
+        y: 57
+        width: 61
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -266,12 +244,12 @@ TextureImporter:
       name: Pawn_Run Knife_6
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 56
-        width: 64
-        height: 71
+        x: 1029
+        y: 57
+        width: 62
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -288,7 +266,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 63c50c55949995344b60b8820c47dcf8
     internalID: 0
     vertices: []
     indices: 
@@ -296,7 +274,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Pawn_Run Knife_0: 4710687688261626355
       Pawn_Run Knife_1: -4087458063697255612
