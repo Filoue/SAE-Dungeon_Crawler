@@ -19,8 +19,13 @@ public class KnightAttack : MonoBehaviour
     {
         _animator.SetFloat("Speed", _rb.linearVelocity.magnitude);
 
-        _sr.flipX = _rb.linearVelocityX < 0;
-
+        if (_rb.linearVelocity.magnitude > 0.1f)
+        {
+            _sr.flipX = true;
+        }else if (_rb)
+        {
+            
+        }
 
 
     }

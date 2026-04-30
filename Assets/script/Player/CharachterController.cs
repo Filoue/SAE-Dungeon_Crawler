@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class CharachterController : MonoBehaviour
 {
     [Header("Movement Settings")]
+    [Tooltip("Vitesse de déplacement du joueur")]
     [SerializeField] private float moveSpeed = 5f;
 
     [SerializeField] private SpriteRenderer _sr;
@@ -23,10 +24,19 @@ public class CharachterController : MonoBehaviour
     private void FixedUpdate()
     {
         // Using rb.MovePosition for smooth physics-based movement in Top-Down
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        rb.linearVelocity = moveInput * moveSpeed;
         _animator.SetFloat("speed", rb.linearVelocity.magnitude);
 
-        _sr.flipX = rb.linearVelocityX > 0;
+        if (moveInput.x > 0.1f)
+        {
+            _sr.flipX = false;
+        }
+        else if (moveInput.x < -0.1f)
+        {
+            _sr.flipX = true;
+        }
+        
+        //_sr.flipX = rb.linearVelocityX < 0;
     }
 
     public void OnMove(InputAction.CallbackContext context)

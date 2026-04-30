@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6600864962661501610}
   - component: {fileID: 2620049382053351221}
-  - component: {fileID: 832773660709390202}
-  - component: {fileID: 3904784049669380531}
   - component: {fileID: 7102069337069067283}
-  - component: {fileID: 1236041570055236725}
+  - component: {fileID: -6462118741413821967}
   m_Layer: 7
   m_Name: EnnmieKnight
   m_TagString: Untagged
@@ -52,7 +50,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -64,37 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &832773660709390202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277342822623381582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bafa15e523d4292a30703b3324a729f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnightSteering
-  _maxSpeed: 10
-  _player: {fileID: 0}
---- !u!114 &3904784049669380531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277342822623381582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97e509ba5f64904292049c6872e426b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Detector
-  mask:
-    serializedVersion: 2
-    m_Bits: 64
-  rayon: 1.5
-  detect: 0
 --- !u!61 &7102069337069067283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,7 +108,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1236041570055236725
+--- !u!114 &-6462118741413821967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,12 +117,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 277342822623381582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331640fe246daeb41b8f870d0ddff361, type: 3}
+  m_Script: {fileID: 11500000, guid: 478618781d9f4b52a0aa874d2d24cbce, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  _animator: {fileID: 4247294444684831768}
-  _detector: {fileID: 3904784049669380531}
-  _sr: {fileID: 3519662747252087685}
+  m_EditorClassIdentifier: Assembly-CSharp::KnightIA
+  speed: 3
+  enragedSpeed: 10
+  attackRange: 1.5
+  maxHealth: 100
+  currentHealth: 0
+  fleeingSpeed: 1.5
+  restingTime: 2.5
+  player: {fileID: 0}
+  anim: {fileID: 4247294444684831768}
 --- !u!1 &3788410325818723902
 GameObject:
   m_ObjectHideFlags: 0

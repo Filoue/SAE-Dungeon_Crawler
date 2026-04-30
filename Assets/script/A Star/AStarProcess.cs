@@ -108,7 +108,6 @@ public static class AStarProcess
 
     private static int GetWalkableNeighbours(List<Vector3Int> walkable, Vector3Int position)
     {
-        int neigbourCount = 0;
         foreach (var neighbour in Utils.MooreDirections);
         {
             //if (walkable.Contains(position + neighbour)) neigbourCount++;
