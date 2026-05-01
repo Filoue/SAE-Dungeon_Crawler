@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PickAxe
   m_EditorClassIdentifier: Assembly-CSharp::Weapons
   weapon: 4
-  attackSpeed: 1.2
+  attackSpeed: 1
   damage: 17

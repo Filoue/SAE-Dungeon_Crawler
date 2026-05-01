@@ -9,11 +9,15 @@ public class HealthSystem : MonoBehaviour
     public int maxHearts = 3;
     private int currentHalfHearts;
 
+    private GameObject _player;
+    
     public UnityEvent onHealthChanged;
 
     private void Start()
     {
         currentHalfHearts = maxHearts * 2;
+
+        _player = GameObject.FindGameObjectWithTag("Player");
         onHealthChanged.Invoke();
     }
 
@@ -37,5 +41,6 @@ public class HealthSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("you are dumb");
+        _player.SetActive(false);
     }
 }

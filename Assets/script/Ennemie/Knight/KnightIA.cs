@@ -11,33 +11,34 @@ enum EnemyState
     Resting,
     Enraged
 }
-
+[RequireComponent(typeof(EnemyHealth))]
 public class KnightIA : MonoBehaviour
 {
     [Header("Stats")]
     public float speed = 3f;
     public float enragedSpeed = 5f;
     public float attackRange = 1.5f;
-    public float maxHealth = 100f;
-    public float currentHealth;
     public float fleeingSpeed = 1.5f;
     public float restingTime = 2f;
+
 
     [Header("Refs")]
     public Transform player;
     [SerializeField] private Animator anim;
     private EnemyState currentState;
     private bool isEnraged = false;
+    private EnemyHealth _enemyHealth;
 
-    void Start() {
-        currentHealth = maxHealth;
+    void Start()
+    {
+        _enemyHealth = GetComponent<EnemyHealth>();
         currentState = EnemyState.Chasing;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update() {
+    void Update()
+    {
         CheckHealth();
-
         switch (currentState) {
             case EnemyState.Chasing: MoveTowardsPlayer(isEnraged ? enragedSpeed : speed); break;
             case EnemyState.Attacking: /* Géré par les triggers ou la distance */ break;
@@ -45,7 +46,6 @@ public class KnightIA : MonoBehaviour
             case EnemyState.Resting: /* Attend la fin de la coroutine */ break;
             case EnemyState.Enraged: MoveTowardsPlayer(enragedSpeed); break;
         }
-        
         Vector2 dir = player.position - transform.position;
         GetComponentInChildren<SpriteRenderer>().flipX = dir.x < 0;
     }
@@ -64,7 +64,7 @@ public class KnightIA : MonoBehaviour
     void Attack() {
         currentState = EnemyState.Attacking;
         anim.SetBool("Attack1", true);
-        // Tu peux ajouter un délai ici ou repasser en Chasing après l'anim
+        
         Invoke("ResetAttack", 0.5f); 
     }
 
@@ -73,7 +73,7 @@ public class KnightIA : MonoBehaviour
     }
 
     void CheckHealth() {
-        if (currentHealth < maxHealth * 0.2f && !isEnraged && currentState != EnemyState.Resting && currentState != EnemyState.Fleeing) {
+        if (_enemyHealth.currentHealth < _enemyHealth.maxHealth * 0.2f && !isEnraged && currentState != EnemyState.Resting && currentState != EnemyState.Fleeing) {
             StartCoroutine(FleeAndRecover());
         }
     }

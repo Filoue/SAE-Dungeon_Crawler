@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -38,19 +42,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.697968
+      value: 2.57
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39054108
+      value: 6.18
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93,9 +97,6 @@ PrefabInstance:
       addedObject: {fileID: 6990730795741974650}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3520769354162215145}
-    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1394203548633618938}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       insertIndex: -1
@@ -106,6 +107,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
       insertIndex: -1
       addedObject: {fileID: 756502447733357323}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 262939623311906032}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1029926335009873122}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 02e00058a6c882244af9cb81822dc090, type: 3}
 --- !u!1 &464267592024069587 stripped
 GameObject:
@@ -127,7 +134,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -139,20 +146,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3520769354162215145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464267592024069587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bafa15e523d4292a30703b3324a729f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnightSteering
-  _maxSpeed: 10
-  _player: {fileID: 0}
 --- !u!114 &1394203548633618938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +321,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &262939623311906032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464267592024069587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bafa15e523d4292a30703b3324a729f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnightSteering
+  _maxSpeed: 10
+  _player: {fileID: 0}
+--- !u!114 &1029926335009873122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464267592024069587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e6d547eb5345a8a5bda8b01d6ce880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 50
+  currentHealth: 0

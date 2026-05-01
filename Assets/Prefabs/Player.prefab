@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4735906421888657116}
   - component: {fileID: 8457693242705065447}
   - component: {fileID: 978446393740355687}
+  - component: {fileID: 7793939538587107701}
   - component: {fileID: 3020491797788552862}
   - component: {fileID: 2846973813414603461}
+  - component: {fileID: 5742807169818910898}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -236,11 +238,40 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2846973813414603461}
+        m_TargetAssemblyTypeName: Wapons_Manager, Assembly-CSharp
+        m_MethodName: ChangeWeapons
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cbba74a2-f8ca-4994-839f-ce2ba70fbaf0
+    m_ActionName: Player/ChangeWeapons
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7793939538587107701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843236899298960228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ddd2de28ea64fd0b911b32545e4c4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackScript
+  wapons: {fileID: 2846973813414603461}
 --- !u!114 &3020491797788552862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,9 +304,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e71684b5049195640895f498874dd656, type: 2}
   - {fileID: 11400000, guid: e75eaa7e80f0ace44b96c69ae93033b8, type: 2}
   - {fileID: 11400000, guid: c96614c2f45214d4d99a316d60df1a91, type: 2}
+  damage: 0
+  attackRadius: 1
+  ennemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
   _animator: {fileID: 3725577830726598504}
   attackInput: 0
-  Wapons: 1
+--- !u!114 &5742807169818910898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843236899298960228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49da72292c244bc2a95bec84a4125aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  maxHearts: 10
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4795263571639733801
 GameObject:
   m_ObjectHideFlags: 0

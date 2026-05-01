@@ -15,6 +15,5 @@ public class AttackScript : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext ctx)
     {
-        //attack_input = ctx.
     }
 }

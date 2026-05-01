@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
   _force: 3
   _rb: {fileID: 4488180339055760518}
+  _healthSystem: {fileID: 5742807169818910898, guid: cb4eb0b2361865248869a26a01126b7e, type: 3}
 --- !u!50 &4488180339055760518
 Rigidbody2D:
   serializedVersion: 5

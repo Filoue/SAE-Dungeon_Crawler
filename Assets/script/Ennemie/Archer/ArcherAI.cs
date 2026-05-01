@@ -9,7 +9,7 @@ enum ArcherState
     Attacking, 
     Retreating
 }
-
+[RequireComponent(typeof(EnemyHealth))]
 public class ArcherAI : MonoBehaviour
 {
     [Header("Distance")] 
@@ -26,6 +26,8 @@ public class ArcherAI : MonoBehaviour
     private Transform player;
     [SerializeField] private Animator anim;
     private ArcherState currentState;
+
+    private EnemyHealth _enemyHealth;
 
     private void Start()
     {

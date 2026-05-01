@@ -10,6 +10,11 @@ public class Wapons_Manager : MonoBehaviour
 {
     [Header("Armes Dispo")] [Tooltip("tout les arme jouable")] [SerializeField]
     private Weapons[] _weapons;
+
+    [Header("Attaque")] 
+    public float damage;
+    public float attackRadius = 0.5f;
+    public LayerMask ennemyLayer;
     
     
     [SerializeField] private Animator _animator;
@@ -48,7 +53,7 @@ public class Wapons_Manager : MonoBehaviour
         if (attackInput && _attackCooldown <= 0f)
         {
             _attackCooldown = _currentWeapons.attackSpeed;
-            
+            OnAttack();
             Debug.Log("Attack");
             _animator.SetBool("Attack", true);
         }
@@ -57,6 +62,26 @@ public class Wapons_Manager : MonoBehaviour
             _animator.SetBool("Attack", false);
         }
     }
+
+    private void OnAttack()
+    {
+        Vector2 origin = transform.position;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            origin,
+            attackRadius, 
+            ennemyLayer
+            );
+        foreach (Collider2D hit in hits)
+        {
+            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+    }
+        
 
     public void Attack(InputAction.CallbackContext ctx)
     {
@@ -84,7 +109,14 @@ public class Wapons_Manager : MonoBehaviour
         _animator.SetLayerWeight(3, _currentWeapons.weapon == EquipedWeapon.Sword ? 1 : 0);
         _animator.SetLayerWeight(4, _currentWeapons.weapon == EquipedWeapon.PickAxe ? 1 : 0);
 
+        damage = _currentWeapons.damage;
         
         _currentWeapons = _weapons[choice];
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

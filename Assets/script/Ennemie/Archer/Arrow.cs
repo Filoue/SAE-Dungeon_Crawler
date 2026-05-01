@@ -6,6 +6,8 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] private float _force = 5;
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField]private HealthSystem _healthSystem;
+    
 
     private GameObject _player;
     
@@ -14,6 +16,7 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         _player = GameObject.Find("Player");
+        _healthSystem = FindAnyObjectByType<HealthSystem>();
         Vector2 direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -25,6 +28,7 @@ public class Arrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            _healthSystem.TakeDamage(1);
             Destroy(gameObject);
         }
     }

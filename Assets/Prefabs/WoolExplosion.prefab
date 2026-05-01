@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5668014831491202690}
   - component: {fileID: 4543711958948054364}
   - component: {fileID: 8268718926800653689}
+  - component: {fileID: 4757411199502616031}
+  - component: {fileID: 529455802633784131}
   m_Layer: 0
   m_Name: WoolExplosion
   m_TagString: Untagged
@@ -4894,3 +4896,32 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &4757411199502616031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783158418152025037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e509ba5f64904292049c6872e426b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Detector
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  rayon: 2
+  detect: 0
+--- !u!114 &529455802633784131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783158418152025037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2783b9248c63711429886e9b1425e600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

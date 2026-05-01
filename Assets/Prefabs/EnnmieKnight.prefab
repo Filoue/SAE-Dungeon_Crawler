@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2620049382053351221}
   - component: {fileID: 7102069337069067283}
   - component: {fileID: -6462118741413821967}
+  - component: {fileID: 6768824656321896879}
   m_Layer: 7
   m_Name: EnnmieKnight
   m_TagString: Untagged
@@ -123,12 +124,24 @@ MonoBehaviour:
   speed: 3
   enragedSpeed: 10
   attackRange: 1.5
-  maxHealth: 100
-  currentHealth: 0
   fleeingSpeed: 1.5
   restingTime: 2.5
   player: {fileID: 0}
   anim: {fileID: 4247294444684831768}
+--- !u!114 &6768824656321896879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277342822623381582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e6d547eb5345a8a5bda8b01d6ce880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &3788410325818723902
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +153,7 @@ GameObject:
   - component: {fileID: 845064897942127084}
   - component: {fileID: 3519662747252087685}
   - component: {fileID: 4247294444684831768}
+  - component: {fileID: 6357767338475191381}
   m_Layer: 7
   m_Name: Warrior_Idle_0
   m_TagString: Untagged
@@ -243,3 +257,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6357767338475191381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788410325818723902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e385d43faaf348951805270e9df85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyHealth))]
 public class explodingSheep : MonoBehaviour
 {
 // 1. Assign your "WoolExplosion" prefab here in the Inspector
@@ -14,7 +15,7 @@ public class explodingSheep : MonoBehaviour
     private AudioSource source;
 
     private IEnumerator Fexplode;
-
+    
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -26,6 +27,7 @@ public class explodingSheep : MonoBehaviour
         {
             if(Fexplode == null)
             {
+                source.Play();
                 Fexplode = Explode();
                 StartCoroutine(Fexplode);
             }
@@ -35,11 +37,7 @@ public class explodingSheep : MonoBehaviour
     private IEnumerator Explode()
     {
         yield return new WaitForSeconds(3.5f);
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
         Instantiate(particles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

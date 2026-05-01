@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: Assembly-CSharp::Weapons
   weapon: 2
-  attackSpeed: 4
+  attackSpeed: 2
   damage: 50

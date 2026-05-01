@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class RoomTrigger : MonoBehaviour
 {
     public GameObject[] mobPrefabs;
-    public int spawnAmount = 10;
+    public int spawnAmount = 3;
     
     
     

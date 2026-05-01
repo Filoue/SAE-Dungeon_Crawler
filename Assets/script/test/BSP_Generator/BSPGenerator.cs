@@ -29,7 +29,9 @@ public class BSPGenerator : MonoBehaviour
 
     [Header("Mob Spawning")] 
     public GameObject roomTriggerPrefab;
+    public GameObject bossRoomTrigger;
     public GameObject[] enemyPrefabs;
+    public GameObject[] BossPrefabs;
     
 
     // 0 = Wall, 1 = Room Floor, 2 = Corridor, 3 = Start, 4 = Boss
@@ -244,7 +246,7 @@ public class BSPGenerator : MonoBehaviour
                 if(room != _bossRoom)
                 {
                     GameObject triggerObj = new GameObject("RoomTrigger_" + room.center);
-                    triggerObj.transform.position = new Vector3(room.center.x, room.center.y, 0);
+                    triggerObj.transform.position = new Vector3(room.center.x - 3, room.center.y + 2, 0);
 
                     BoxCollider2D collider = triggerObj.AddComponent<BoxCollider2D>();
                     collider.isTrigger = true;
@@ -259,12 +261,16 @@ public class BSPGenerator : MonoBehaviour
                 else
                 {
                     GameObject triggerObj = new GameObject("BossTriggerRoom_" + room.center);
-                    triggerObj.transform.position = new Vector3(room.center.x, room.center.y, 0);
+                    triggerObj.transform.position = new Vector3(room.center.x - 3, room.center.y + 2, 0);
 
                     BoxCollider2D collider = triggerObj.AddComponent<BoxCollider2D>();
                     collider.isTrigger = true;
 
                     collider.size = new Vector2(room.width - 0.5f, room.height - 0.5f);
+
+                    BossRoomTrigger rt = triggerObj.AddComponent<BossRoomTrigger>();
+                    rt.bossPrefabs = BossPrefabs;
+                    rt.Setup(room);
                 }
             }
         }

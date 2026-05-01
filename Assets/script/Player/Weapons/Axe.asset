@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: Assembly-CSharp::Weapons
   weapon: 1
-  attackSpeed: 2
+  attackSpeed: 1.5
   damage: 25
